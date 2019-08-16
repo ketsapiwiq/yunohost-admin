@@ -25,11 +25,9 @@
             data.password_min_length = PASSWORD_MIN_LENGTH;
             c.view('user/user_create', data, function(){
                 var usernameField = $('#username');
-                usernameField.on('blur', function(){
+                usernameField.on('input', function(){
                     var emailField = $('#email');
-                    if (emailField.val() == '') {
-                        emailField.val(usernameField.val());
-                    }
+                    emailField.val(usernameField.val());
                 });
             });
         });
@@ -48,9 +46,7 @@
                     c.params['mailbox_quota'] += "M";
                 }
                 else {c.params['mailbox_quota'] = 0;}
-
-                // Compute email field
-                c.params['mail'] = c.params['email'] + c.params['domain'];
+		c.params['domain']=c.params['domain'].slice(1);
 
                 c.api('/users', function(data) { // http://api.yunohost.org/#!/user/user_create_post_2
                     c.redirect('#/users');

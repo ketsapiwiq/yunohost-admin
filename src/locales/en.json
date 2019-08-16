@@ -138,6 +138,7 @@
     "domain_visit_url": "Visit %s",
     "domains": "Domains",
     "download": "Download",
+    "email_info": "The main email adress must start with the username, nevertheless you can add additional email adresses (aliases) after creating the user.",
     "enable": "Enable",
     "enabled": "Enabled",
     "error_modify_something": "You should modify something",
